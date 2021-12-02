@@ -16,7 +16,7 @@ const defaultProps = {
   parentNode: undefined,
   draggedNode: undefined,
   canDrop: false,
-  title: undefined,
+  razao_social: undefined,
   subtitle: undefined,
   rowDirection: 'ltr',
 }
@@ -33,7 +33,7 @@ export interface NodeRendererProps {
   buttons?: JSX.Element[] | undefined
   className?: string | undefined
   style?: React.CSSProperties | undefined
-  title?: ((data: NodeData) => JSX.Element | JSX.Element) | undefined
+  razao_social?: ((data: NodeData) => JSX.Element | JSX.Element) | undefined
   subtitle?: ((data: NodeData) => JSX.Element | JSX.Element) | undefined
   icons?: JSX.Element[] | undefined
   lowerSiblingCounts: number[]
@@ -68,7 +68,7 @@ const NodeRendererDefault: React.FC<NodeRendererProps> = function (props) {
     canDrop,
     canDrag,
     node,
-    title,
+    razao_social,
     subtitle,
     draggedNode,
     path,
@@ -85,7 +85,7 @@ const NodeRendererDefault: React.FC<NodeRendererProps> = function (props) {
     rowDirection,
     ...otherProps
   } = props
-  const nodeTitle = title || node.title
+  const nodeTitle = razao_social || node.razao_social
   const nodeSubtitle = subtitle || node.subtitle
   const rowDirectionClass = rowDirection === 'rtl' ? 'rst__rtl' : undefined
 

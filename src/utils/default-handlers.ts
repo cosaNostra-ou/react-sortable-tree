@@ -13,7 +13,7 @@ export type GetTreeItemChildrenFn = (data: GetTreeItemChildren) => void
 export type GetNodeKeyFunction = (data: TreeIndex & TreeNode) => string | number
 
 export interface TreeItem {
-  title?: ReactNode | undefined
+  razao_social?: ReactNode | undefined
   subtitle?: ReactNode | undefined
   expanded?: boolean | undefined
   children?: TreeItem[] | GetTreeItemChildrenFn | undefined
@@ -98,7 +98,7 @@ export const defaultSearchMethod = ({
   searchQuery,
 }: SearchData): boolean => {
   return (
-    stringSearch('title', searchQuery, node, path, treeIndex) ||
+    stringSearch('razao_social', searchQuery, node, path, treeIndex) ||
     stringSearch('subtitle', searchQuery, node, path, treeIndex)
   )
 }
